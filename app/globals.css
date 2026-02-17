@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  --background: #020617;
+  /* Slate 950 - Deep Cool Dark */
+  --surface: #0f172a;
+  /* Slate 900 */
+  --foreground: #e2e8f0;
+  /* Slate 200 */
+
+  --primary: #38bdf8;
+  /* Sky 400 - Cool Electric Blue */
+  --primary-glow: rgba(56, 189, 248, 0.4);
+
+  --secondary: #818cf8;
+  /* Indigo 400 */
+  --secondary-glow: rgba(129, 140, 248, 0.4);
+
+  --accent: #22d3ee;
+  /* Cyan 400 */
+
+  --border: #1e293b;
+  /* Slate 800 */
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-feature-settings: "ss01", "ss02", "case", "salt";
+}
+
+@layer utilities {
+
+  /* Premium Glass Effect */
+  .glass-panel {
+    @apply bg-slate-950/70 backdrop-blur-xl border border-slate-800/50;
+  }
+
+  /* Cool Blue Glow Structure */
+  .neo-structure {
+    @apply bg-slate-900/50 border border-slate-800 transition-all duration-300;
+  }
+
+  .neo-structure:hover {
+    @apply border-sky-400/50 shadow-[0_0_30px_-10px_var(--primary-glow)];
+  }
+
+  /* Typography */
+  .display-text {
+    @apply font-black tracking-tight leading-[0.9] uppercase;
+  }
+
+  /* Interactive Elements */
+  .btn-primary {
+    @apply relative overflow-hidden bg-sky-400 text-slate-950 font-bold uppercase tracking-wider px-6 py-3 hover:bg-sky-300 transition-all duration-200 hover:shadow-[0_0_20px_-5px_var(--primary-glow)] active:scale-95;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
